@@ -1,10 +1,12 @@
 # Airport Flights SQL Analysis Project
 
+A SQL-driven analysis of a U.S. domestic flights dataset, translating raw flight records into actionable business insights on route performance, capacity utilization, seasonal trends, and year-over-year growth.
+
 ## Overview
 
-This project analyzes a U.S. domestic flights dataset (`airport_db`) using MySQL to uncover travel patterns, capacity utilization, seasonal trends, and route performance. The goal is to translate raw flight records into actionable business insights that airlines and airport authorities can use to optimize routes, pricing, and resource allocation.
+Airlines and airport authorities need more than raw flight logs — they need answers to concrete operational questions: which routes are underperforming, when does demand peak, and where is capacity being wasted? This project uses MySQL to work through **13 business problem statements** on a real flights dataset, then translates the query results into specific, actionable recommendations.
 
-The dataset captures route-level flight activity, including passenger volumes, seat capacity, distance, and population at origin/destination cities, recorded over multiple years.
+![Query results screenshot](./Screenshot%202026-06-21%20002755.png)
 
 ## Dataset
 
@@ -26,12 +28,12 @@ The dataset captures route-level flight activity, including passenger volumes, s
 | `Org_airport_lat` / `Org_airport_long` | Origin airport coordinates |
 | `Dest_airport_lat` / `Dest_airport_long` | Destination airport coordinates |
 
-## Tools Used
+## Tools & Techniques
 
 - **MySQL** — querying, aggregation, and analysis
-- **SQL features applied:** `GROUP BY`, `HAVING`, window functions (`ROW_NUMBER`, `LAG`), CTEs (`WITH`), `CASE` statements, and date functions (`YEAR`, `MONTH`)
+- **SQL techniques applied:** `GROUP BY`, `HAVING`, window functions (`ROW_NUMBER`, `LAG`), CTEs (`WITH`), `CASE` statements, date functions (`YEAR`, `MONTH`)
 
-## Project Structure
+## Business Problems Solved
 
 The analysis is organized into 13 business problem statements, each addressing a specific operational question:
 
@@ -51,11 +53,9 @@ The analysis is organized into 13 business problem statements, each addressing a
 | 12 | YoY passenger growth % per route | Track route-level demand trends |
 | 13 | YoY growth % in total flights & passengers | Assess overall annual industry growth |
 
-All queries and their full SQL code are available in [`airport_sql_project.sql`](./airport_sql_project.sql).
+Full SQL code for all 13 queries is in [`airport_sql_project.sql`](./airport_sql_project.sql).
 
 ## Key Insights & Recommendations
-
-Based on the query results, the following strategies are proposed to improve operational efficiency and profitability:
 
 **1. Route Optimization and Realignment**
 - Reduce flight frequency or capacity on underperforming routes with declining passenger trends.
@@ -80,6 +80,18 @@ Based on the query results, the following strategies are proposed to improve ope
 3. Run the queries in `airport_sql_project.sql` sequentially, problem by problem.
 4. Review the output of each query against its corresponding business question for insights.
 
+## Future Improvements
+
+- Add sample output rows/screenshots next to each query so insights are visible without running the SQL locally
+- Build a lightweight dashboard (Power BI/Tableau/Excel) on top of key query outputs to visualize trends
+- Add an ERD or schema diagram for the `airport_db` database
+- Parameterize a few queries (e.g., top-N routes by city) so they're reusable beyond the specific examples given
+
 ## Conclusion
 
 This project demonstrates how SQL can be used end-to-end — from raw transactional flight data to strategic business recommendations — covering aggregation, ratio analysis, time-series trends, and year-over-year growth calculations using window functions and CTEs.
+
+## Author
+
+**Sahil Kumar Kesarwani**
+[GitHub](https://github.com/sahilkumarkesarwani)
